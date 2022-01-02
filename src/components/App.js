@@ -5,12 +5,18 @@ import Images from "./Images/Images";
 
 const App = () => {
   const [query, setQuery] = useState("");
-  const { loading, images, setImages } = useFetchImages(query);
+  const [page, setPage] = useState(1);
+  const { loading, images, setImages } = useFetchImages(query, page);
 
   return (
     <>
-      <SearchBar setImages={setImages} query={query} setQuery={setQuery} />
-      <Images images={images} />
+      <SearchBar
+        setPage={setPage}
+        setImages={setImages}
+        query={query}
+        setQuery={setQuery}
+      />
+      <Images loading={loading} page={page} setPage={setPage} images={images} />
     </>
   );
 };

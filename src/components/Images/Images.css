@@ -13,6 +13,11 @@
   width: 100%;
 }
 
+.loader {
+  width: 7rem;
+  margin: 1rem auto 1rem auto;
+}
+
 @media (max-width: 991px) {
   .gallery {
     column-count: 2;

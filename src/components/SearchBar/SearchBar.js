@@ -1,10 +1,11 @@
 import React from "react";
 import "./searchbar.css";
 
-const SearchBar = ({ query, setQuery, setImages }) => {
+const SearchBar = ({ query, setQuery, setImages, setPage }) => {
   const handleChange = (e) => {
     setQuery(e.target.value);
     setImages([]);
+    setPage(1);
   };
 
   return (
